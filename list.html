@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>benefit</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="format-detection" content="telephone=no">
+	<!--禁用手机号码链接(for iPhone)-->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimum-scale=1.0,maximum-scale=1.0,minimal-ui" />
+	<!--自适应设备宽度-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<!--控制全屏时顶部状态栏的外，默认白色-->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="Keywords" content="">
+	<meta name="Description" content="...">
+
+    
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+   
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+
+</head>
+<body>
+
+<div id="inside">
+	<img src="imgs/inside_bg2.jpg" width="100%" />
+	<div class="section" id="list">
+
+		<div class="logo">
+			<a href="javascript:;">
+				<img src="imgs/logo.png" width="100%" />
+			</a>
+		</div>
+
+		<div class="slogan">
+			<img src="imgs/slogan.png" width="100%" />
+		</div>
+
+		<div class="photoFrame">
+
+			<div id="imgPreview">
+		        <div class="imgBox">
+		            <div class="shell">
+		            	<img src="imgs/place.jpg" width="100%" />
+		            </div>
+		        </div>
+		    </div>
+
+			<img src="imgs/photoFrame.png" width="100%" />
+		</div>
+
+		<a href="javascript:;" class="btn queren_btn">
+			<img src="imgs/queren_btn.jpg" width="100%" />
+		</a>
+
+		<div class="listcon">
+			<!-- Swiper -->
+		    <div class="swiper-container">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide" data-val="kk">
+		            	<img src="imgs/kk.png" width="100%" />
+		            </div>
+		            <div class="swiper-slide" data-val="scissorhand">
+		            	<img src="imgs/scissorhand.png" width="100%" />
+		            </div>
+		            <div class="swiper-slide" data-val="mblame">
+		            	<img src="imgs/mblame.png" width="100%" />
+		            </div>
+		            <div class="swiper-slide" data-val="shrek">
+		            	<img src="imgs/shrek.png" width="100%" />
+		            </div>
+		            <div class="swiper-slide" data-val="spiderMan">
+		            	<img src="imgs/spiderMan.png" width="100%" />
+		            </div>
+		        </div>
+				<!-- Add Arrows -->
+		        <div class="swiper-button-next">
+		        	<img src="imgs/arr_r.jpg" width="100%" />
+		        </div>
+		        <div class="swiper-button-prev">
+		        	<img src="imgs/arr_l.jpg" width="100%" />
+		        </div>
+		    </div>
+		</div>
+		
+
+
+
+
+	</div>
+</div>
+
+<script type="text/javascript" src="js/public.js"></script>
+
+<!-- Initialize Swiper -->
+<script type="text/javascript">
+	var swiper = new Swiper('.swiper-container', {
+	    pagination: '.swiper-pagination',
+	    nextButton: '.swiper-button-next',
+	    prevButton: '.swiper-button-prev',
+	    spaceBetween: 30,
+	    effect : 'fade',
+		fade: {
+		  crossFade: true,
+		},
+		loop: true
+	});
+
+	$(".queren_btn").click(function(){
+		var choseVal = $(".swiper-slide-active").attr("data-val");
+		console.log(choseVal);
+	})
+
+</script>
+
+
+<!-- 横屏代码 -->
+<div id="orientLayer" class="mod-orient-layer">
+    <div class="mod-orient-layer__content">
+        <i class="icon mod-orient-layer__icon-orient"></i>
+        <div class="mod-orient-layer__desc">为了更好的体验，请使用竖屏浏览</div>
+    </div>
+</div>
+
+</body>
+</html>

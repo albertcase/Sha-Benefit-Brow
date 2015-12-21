@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>benefit</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="format-detection" content="telephone=no">
+	<!--禁用手机号码链接(for iPhone)-->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimum-scale=1.0,maximum-scale=1.0,minimal-ui" />
+	<!--自适应设备宽度-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<!--控制全屏时顶部状态栏的外，默认白色-->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="Keywords" content="">
+	<meta name="Description" content="...">
+
+    
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+   
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+</head>
+<body>
+
+
+<div id="inside">
+	<img src="imgs/inside_bg2.jpg" width="100%" />
+	<div class="section" id="complete">
+
+		<div class="logo">
+			<a href="javascript:;">
+				<img src="imgs/logo.png" width="100%" />
+			</a>
+		</div>
+
+		<div class="slogan">
+			<img src="imgs/slogan.png" width="100%" />
+		</div>
+
+		<a href="javascript:;" class="budao">
+			<img src="imgs/budao_btn.png" width="100%" />
+		</a>
+
+		<div class="photoFrame">
+			<div id="imgPreview">
+		        <div class="imgBox">
+		            <div class="shell">
+		            	<img src="imgs/place.jpg" width="100%" />
+		            </div>
+		        </div>
+		    </div>
+
+			<img src="imgs/photoFrame.png" width="100%" />
+		</div>
+		<div class="budao_text">
+			<img src="imgs/budao_text.png" width="100%" />
+		</div>
+
+		<!-- 不是自己 -->
+		<a href="javascript:;" class="btn iwantplay_btn">
+			<img src="imgs/iwantplay_btn.png" width="100%" />
+		</a>
+
+		<!-- 是自己 -->
+		<a href="javascript:;" class="btn replay_btn">
+			<img src="imgs/replay_btn.jpg" width="100%" />
+		</a>
+
+		<div class="listcon">
+			<img src="imgs/complete/spiderMan_1.png" data-num="1" id="finallyWork" width="100%" />
+		</div>
+		
+
+
+
+
+	</div>
+</div>
+
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript">
+
+	var is_me = false,
+	ctype = "spiderMan"; 
+
+	$(".shareBtn").click(function(){
+		$(".pup_share").fadeIn();
+	})
+
+	$(".pup_share").bind("touchstart", function(){
+		$(".pup_share").hide();
+	})
+
+	if(is_me){
+		$(".budao_text").css({"opacity": 0});
+		$(".budao").remove();
+		$(".replay_btn").css({"display": "inline-block"});
+	}else{
+		$(".iwantplay_btn").css({"display": "inline-block"});
+	}
+
+	$(".budao").click(function(){
+		if($(this).hasClass("hover")) return false;
+		var curBudaoNum = $("#finallyWork").attr("data-num");
+		curBudaoNum++;
+		console.log(curBudaoNum)
+		$("#finallyWork").attr({"src": "imgs/complete/"+ctype+"_"+curBudaoNum+".png", "data-num": curBudaoNum});
+		$(this).addClass("hover");
+	})
+
+</script>
+
+<!-- 横屏代码 -->
+<div id="orientLayer" class="mod-orient-layer">
+    <div class="mod-orient-layer__content">
+        <i class="icon mod-orient-layer__icon-orient"></i>
+        <div class="mod-orient-layer__desc">为了更好的体验，请使用竖屏浏览</div>
+    </div>
+</div>
+
+</body>
+</html>

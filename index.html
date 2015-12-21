@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>benefit</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="format-detection" content="telephone=no">
+	<!--禁用手机号码链接(for iPhone)-->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimum-scale=1.0,maximum-scale=1.0,minimal-ui" />
+	<!--自适应设备宽度-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<!--控制全屏时顶部状态栏的外，默认白色-->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="Keywords" content="">
+	<meta name="Description" content="...">
+
+    
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+   
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/PxLoader.js"></script>
+    <script type="text/javascript" src="js/touch.js"></script>
+
+
+</head>
+<body>
+
+<!-- 弹窗代码 -->
+<div class="pup">
+    <div class="pupcon" id="rule">
+        <img src="imgs/r_head.png" width="100%" />
+        <div class="rulecon">
+            <h2>Benefit 活动条款与细则</h2>
+            <ol type="1" start="1">
+                <li>本次活动由Benefit（上海）商贸有限公司主办。</li>
+                <li>本次活动不会要求参与者购买任何产品，除了向网络服务商和/或电话公司支付上网费用外，均不会产生任何费用。</li>
+                <li>获奖者需同意与Benefit保持联络。</li>
+                <li>如果获奖者因任何原因无法在指定时间内使用奖品现金券，其奖项将被取消。</li>
+                <li>所有不包括于奖项内的额外费用须由获奖者自行支付。任何于上文中未特别提及的内容，均不包括在奖项之中。</li>
+                <li>奖项限单笔消费一次性使用且不可与店内其它优惠活动同享，且仅限消费使用不折抵现金不找零 。奖项完全由汤丽柏琦提供，任何参赛者或代表参赛者人士的不当行为将可能导致剥夺奖项的后果。</li>
+                <li>所有现金券仅限在中国大陆所有Benefit精品店使用。</li>
+                <li>活动获奖者必须同意出席任何有关颁奖的任何活动及参观Benefit的活动，尤其是在Benefit精品店内接受摄录、采访和摄影。获奖者必须同意Benefit可于不同媒体使用所有相关影片、照片或采访材料，以用作与Benefit相关的宣传和营销活动。</li>
+                <li>所有现金券仅限在中国大陆所有Benefit精品店使用。</li>
+                <li>活动获奖者必须同意出席任何有关颁奖的任何活动及参观贝玲妃的活动，尤其是在贝玲妃精品店内接受摄录、采访和摄影。获奖者必须同意贝玲妃可于不同媒体使用所有相关影片、照片或采访材料，以用作与贝玲妃相关的宣传和营销活动。
+                </li>
+            </ol>
+            <a href="javascript:;" class="btn iknowBtn">
+                <img src="imgs/iknow_btn.jpg" width="100%" />
+            </a>
+        </div>
+        <img src="imgs/r_footer.png" class="r_footer" width="100%" />
+    </div>
+</div>
+
+
+<div id="dreambox" class="indexbg">
+
+    <div class="section" id="index">
+        <span class="arr">
+            <img src="imgs/arr.png" width="100%" />
+        </span>
+    </div>
+
+    <a href="javascript:;" class="ruleLink"></a>
+</div>
+
+<!-- 横屏代码 -->
+<div id="orientLayer" class="mod-orient-layer">
+    <div class="mod-orient-layer__content">
+        <i class="icon mod-orient-layer__icon-orient"></i>
+        <div class="mod-orient-layer__desc">为了更好的体验，请使用竖屏浏览</div>
+    </div>
+</div>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript">
+    $(".ruleLink").click(function(){
+        pupFunShow("rule");
+    })
+
+    $(".iknowBtn").click(function(){
+        pupFunHide();
+    })
+
+    $("#index").swipeUp(function (event) {
+        window.location.href = "upload.html";
+    }, {
+        x: 30,/*update the minimum swiping distance*/
+        y: 30
+    });
+</script>
+
+
+<!-- 横屏代码 -->
+<div id="orientLayer" class="mod-orient-layer">
+    <div class="mod-orient-layer__content">
+        <i class="icon mod-orient-layer__icon-orient"></i>
+        <div class="mod-orient-layer__desc">为了更好的体验，请使用竖屏浏览</div>
+    </div>
+</div>
+
+</body>
+</html>

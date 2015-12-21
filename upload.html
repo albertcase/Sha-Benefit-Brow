@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>benefit</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="format-detection" content="telephone=no">
+	<!--禁用手机号码链接(for iPhone)-->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimum-scale=1.0,maximum-scale=1.0,minimal-ui" />
+	<!--自适应设备宽度-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<!--控制全屏时顶部状态栏的外，默认白色-->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="Keywords" content="">
+	<meta name="Description" content="...">
+
+    
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+   
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/PxLoader.js"></script>
+
+
+</head>
+<body>
+
+<div id="inside">
+	<img src="imgs/inside_bg.jpg" width="100%" />
+	<div class="section" id="upload">
+		
+		<div class="logo">
+			<a href="javascript:;">
+				<img src="imgs/logo.png" width="100%" />
+			</a>
+		</div>
+
+		<div class="photoFrame">
+
+			<div id="imgPreview">
+		        <div class="imgBox">
+		            <div class="shell"></div>
+		        </div>
+		    </div>
+
+			<input type="file" accept="image/jpeg" name="fileInput" id="fileInput" />
+			<img src="imgs/photoFrame.png" width="100%" />
+		</div>
+
+		<a href="javascript:;" class="btn upload_btn">
+			<img src="imgs/upload_btn.png" width="100%" />
+		</a>
+
+	</div>
+</div>
+
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="js/dist/lrz.bundle.js"></script>
+<script type="text/javascript" src="js/ocanvas.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+<script type="text/javascript">
+	document.getElementById("fileInput").addEventListener('change', function () {
+	    //$(".uploadloading").show();
+	    var that = this;
+	    lrz(that.files[0], {
+	        quality: 1
+	    })
+	        .then(function (rst) {
+	            var img        = new Image(),
+	                div        = document.getElementById('imgPreview');
+	            img.onload = function () {
+	                imgCreat(rst.base64); 
+	                $("#fileInput").hide();
+	            };
+
+	            img.src = rst.base64;
+
+	            return rst;
+	        });
+	});
+
+
+	function toFixed2 (num) {
+	    return parseFloat(+num.toFixed(2));
+	}
+
+	$(".upload_btn").click(function(){
+		//var photoSrc = $("#photoCanvas")[0].toDataURL("image/png", 1.0).replace("data:image/png;base64,", "");
+		var photoSrc = $("#photoCanvas")[0].toDataURL({format:"png", quality: 1}).replace("data:image/png;base64,", "");
+		console.log(photoSrc);
+	})
+
+</script>
+
+<!-- 横屏代码 -->
+<div id="orientLayer" class="mod-orient-layer">
+    <div class="mod-orient-layer__content">
+        <i class="icon mod-orient-layer__icon-orient"></i>
+        <div class="mod-orient-layer__desc">为了更好的体验，请使用竖屏浏览</div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>benefit</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="format-detection" content="telephone=no">
+	<!--禁用手机号码链接(for iPhone)-->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimum-scale=1.0,maximum-scale=1.0,minimal-ui" />
+	<!--自适应设备宽度-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<!--控制全屏时顶部状态栏的外，默认白色-->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="Keywords" content="">
+	<meta name="Description" content="...">
+
+    
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+   
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+</head>
+<body>
+
+
+<div id="inside">
+	<img src="imgs/form_bg.jpg" width="100%" />
+	<div class="section" id="qrcode">
+
+		<div class="logo logo2">
+			<a href="javascript:;">
+				<img src="imgs/logo2.png" width="100%" />
+			</a>
+		</div>
+
+
+		<div class="form_con">
+			<img src="imgs/form_text.png" width="70%" />
+			<div class="formArea">
+				<ul>
+					<li>
+						<span>预约城市：</span>
+						<select name="city">
+							<option>请选择</option>
+							<option>北京</option>
+							<option>上海</option>
+							<option>深圳</option>
+						</select>
+					</li>
+					<li>
+						<span>预约店铺：</span>
+						<select name="store">
+							<option>请选择</option>
+							<option>北京</option>
+							<option>上海</option>
+							<option>深圳</option>
+						</select>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<a href="javascript:;" class="btn submit_btn">
+			<img src="imgs/submit_btn.png" width="100%" />
+		</a>
+
+
+
+	</div>
+</div>
+
+<script type="text/javascript" src="js/public.js"></script>
+
+<script type="text/javascript">
+	function checkForm(){
+
+		var city = $("select[name='city'] option:selected").text(); 
+		var store = $("select[name='store'] option:selected").text(); 
+
+		if(city == "请选择"){
+			alert("请选择预约的城市")
+		}else if(store == "请选择"){
+			alert("请选择预约的店铺");
+		}else{
+			console.log(city + ":" + store);
+		}
+
+	}
+
+	$(".submit_btn").click(function(){
+		checkForm();
+	})
+
+</script>
+
+<!-- 横屏代码 -->
+<div id="orientLayer" class="mod-orient-layer">
+    <div class="mod-orient-layer__content">
+        <i class="icon mod-orient-layer__icon-orient"></i>
+        <div class="mod-orient-layer__desc">为了更好的体验，请使用竖屏浏览</div>
+    </div>
+</div>
+
+</body>
+</html>
